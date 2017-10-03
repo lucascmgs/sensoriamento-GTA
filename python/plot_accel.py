@@ -1,11 +1,16 @@
 import matplotlib.pyplot as plt
 
-file = open("output3.txt")
+file_path = raw_input("Arquivo de onde ler: ")
+if not file_path:
+    file_path = "default"
+file_path += ".txt"
+
+file = open(file_path)
 inputx = []
 inputy = []
 inputz = []
 
-discarded_lines = 500
+discarded_lines = 200
 discarded_check = 0
 for line in file:
     discarded_check = discarded_check + 1
